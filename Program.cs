@@ -35,12 +35,12 @@ namespace Hagman_Game
         {"u", "ukraina"},
         {"v", "qiymat"},
         {"w", "🐺(bo'ri)"},
-        {"x", ""},
-        {"y", ""},
+        {"x", "x"},
+        {"y", "ha"},
         {"z", "🦓(zebra)"}
       };
 
-    public static string message = "Aslan";
+    public static string message = "Nima";
     public static string newMessage = string.Empty;
     public static bool isTrue = true;
     public static int count = 1;
@@ -58,7 +58,7 @@ namespace Hagman_Game
       System.Console.WriteLine("Eslatma: Ushbu uyinda ingiliz tilini bilish talab qilinadi");
 
       GetReselt(charrectr);
-      System.Console.WriteLine($"{count} - harif ingiliz tilda \"{result}\" ning birinchi harifi");
+      System.Console.WriteLine($"{count} - harif ingiliz tilda \"{result}\" so'zining birinchi harifi");
       gotoGame:
       if(message != null && countP != 3)
       {
@@ -80,7 +80,7 @@ namespace Hagman_Game
 
           }
           else{
-            System.Console.WriteLine($"{count} - harif ingiliz tilda \"{result}\" ning birinchi harifi");
+            System.Console.WriteLine($"{count} - harif ingiliz tilda \"{result}\" so'zining birinchi harifi");
           }
           goto gotoGame;
         }
