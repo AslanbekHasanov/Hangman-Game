@@ -10,38 +10,7 @@ namespace Hagman_Game
 {
   class Program
   {
-    public static string message = "Salom";
-    public static bool isTrue = true;
-    public static int count = 0;
-
-    public static void Main(string[] args)
-    {
-      string charrectr = string.Empty;
-      Console.Clear();
-      System.Console.WriteLine("Welcome to, my project");
-      System.Console.WriteLine("Siz (------) ortida yashiringan so'zni topishga harakat qiling");
-      System.Console.WriteLine("Eslatma: Ushbu uyinda ingiliz tilini bilish talab qilinadi");
-      condition:
-      if(isTrue)
-      {
-        System.Console.Write("Belgini kiriting: ");
-        charrectr = Console.ReadLine();
-        GetVersions(out string result, charrectr);
-      }
-      else
-      {
-        System.Console.WriteLine(" ==== Topolmadingiz :( ===== ");
-        isTrue = true;
-      }
-      goto condition;
-
-
-    }
-    static void GetVersions(out string result, string charrectr)
-    {
-      result = string.Empty;
-      int countLocal = count;
-      string[,] messagess =
+      public static string[,] messagess =
       {
         {"a", "🐜(chumoli)"},
         {"b", "🐻(ayiq)"},
@@ -71,46 +40,126 @@ namespace Hagman_Game
         {"z", "🦓(zebra)"}
       };
 
+    public static string message = "Aslan";
+    public static string newMessage = string.Empty;
+    public static bool isTrue = true;
+    public static int count = 1;
+    public static int countP = 0;
+    public static int messageCount = message.Length;
+    public static string result = string.Empty;
+
+
+    public static void Main(string[] args)
+    {
+      string charrectr = message[0].ToString().ToLower();
+      Console.Clear();
+      System.Console.WriteLine("Welcome to, my project");
+      System.Console.WriteLine($"Siz (------) ortida yashiringan \"{message.Length}\" ta harifdan tashkiltopgan so'zni topishga harakat qiling");
+      System.Console.WriteLine("Eslatma: Ushbu uyinda ingiliz tilini bilish talab qilinadi");
+
+      GetReselt(charrectr);
+      System.Console.WriteLine($"{count} - harif ingiliz tilda \"{result}\" ning birinchi harifi");
+      gotoGame:
+      if(message != null && countP != 3)
+      {
+
+        System.Console.Write("Harifni kiriting: ");
+        charrectr = Console.ReadLine();
+        GetVersions(charrectr);
+        GetReselt1();
+
+        if(isTrue == true)
+        {
+          newMessage += charrectr;
+          System.Console.WriteLine("Topdingiz !");
+          System.Console.WriteLine($"{newMessage}---");
+          System.Console.WriteLine("=============================");
+          if(newMessage.Length == messageCount)
+          {
+            countP = 3;
+
+          }
+          else{
+            System.Console.WriteLine($"{count} - harif ingiliz tilda \"{result}\" ning birinchi harifi");
+          }
+          goto gotoGame;
+        }
+        else
+        {
+          System.Console.WriteLine("Topolmadigiz !");
+          countP++;
+          goto gotoGame;
+
+        }
+
+      }
+      else
+      {
+        System.Console.WriteLine("O'yin tugandi !!! ");
+
+      }
+
+
+
+
+    }
+    static void GetVersions(string? charrectr)
+    {
+
      if(charrectr.ToString().ToLower().Contains(message[0].ToString().ToLower()))
      {
 
         for(int i = 0; i < messagess.Length / 2; i++)
         {
-            if(messagess[i, 0].Contains(message[0].ToString().ToLower()))
+            if(messagess[i, 0].Contains(charrectr.ToString().ToLower()))
             {
-              // System.Console.WriteLine("Topdingiz !");
-              // System.Console.WriteLine($"{charrectr}");
-              result = messagess[i, 1];
-              message = message.Substring(1, message.Length - 1);
+              isTrue = true;
+              if(message.Length  != 1)
+              {
+                message = message.Substring(1, message.Length - 1);
+
+              }
               count++;
-              System.Console.WriteLine($"{count} - harif ingiliz tilda {result} ning birinchi harifi");
               break;
 
             }
 
         }
-        if(countLocal == count)
-          isTrue = false;
      }
-     else if(count == 0)
-     {
-      for(int i = 0; i < messagess.Length / 2; i++)
+     else
+      isTrue = false;
+    }
+
+    static void GetReselt(string? charrectr)
+    {
+
+        for(int i = 0; i < messagess.Length / 2; i++)
+        {
+            if(messagess[i, 0].Contains(charrectr.ToString().ToLower()))
+            {
+              result = messagess[i, 1];
+              break;
+
+            }
+
+        }
+    }
+
+    static void GetReselt1()
+    {
+
+        for(int i = 0; i < messagess.Length / 2; i++)
         {
             if(messagess[i, 0].Contains(message[0].ToString().ToLower()))
             {
               result = messagess[i, 1];
-              message = message.Substring(1, message.Length - 1);
-              count++;
               break;
 
             }
 
         }
-
-     }
-
-
     }
+
   }
 
 
