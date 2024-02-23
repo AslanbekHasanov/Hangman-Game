@@ -36,7 +36,7 @@ O'yinda hariflarni topishda orasida 3 tadan kam xatolik qilib so'z topilgan vazi
 <br>
 
 #### Barcha hariflarni topish, ammo xatolik bilan
-![Haman-Game-Winner](/image/hagman-game-winner.gif)
+![Haman-Game-Winner](/image/hagman-game-winner-two.gif)
 
 <br>
 
