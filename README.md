@@ -30,12 +30,12 @@ O'yinda hech qanday xatoliksiz so'z topilgan vaziyat
 
 <br>
 
-### 1.2 **O'yinda orasida xatolik qilib ammo barcha hariflarni topib yutish.**
+### 1.2 **O'yin orasida xatolik qilib ammo barcha hariflarni topib yutish.**
 O'yinda hariflarni topishda orasida 3 tadan kam xatolik qilib so'z topilgan vaziyati.
 
 <br>
 
-#### Barcha hariflarni topish ammo xatolik bilan
+#### Barcha hariflarni topish, ammo xatolik bilan
 ![Haman-Game-Winner](/image/hagman-game-winner.gif)
 
 <br>
